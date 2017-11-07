@@ -47,7 +47,7 @@
        isset($_POST['eventFromDate']) &&
        isset($_POST['eventToDate']) &&
        isset($_POST['eventReport'])) {
-        echo json_encode(addEvent(1, $_POST['eventTitle'], $_POST['eventVenue'], $_POST['eventFromDate'], $_POST['eventToDate'], $_POST['eventReport']));
+        echo json_encode(addEvent(1, $_POST['eventTitle'], $_POST['eventVenue'], $_POST['eventFromDate'], $_POST['eventToDate'], utf8_decode($_POST['eventReport'])));
     }
     else {
         $response['result']['status'] = "failed";
