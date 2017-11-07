@@ -14,10 +14,6 @@
     <!-- Include Editor style. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/css/froala_style.min.css" rel="stylesheet" type="text/css" />
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -48,7 +44,7 @@
     </nav>
 
     <div class="container" style="margin-top: 80px; margin-bottom: 80px;">
-        <form method="post">
+        <form method="post" name="eventForm" action="api/submitEvent.php" id="eventForm">
             <div class="form-group">
                 <label for="eventTitle">Event Title</label>
                 <input type="text" class="form-control" id="eventTitle" name="eventTitle" placeholder="Enter event title">
@@ -70,7 +66,7 @@
                 <textarea class="form-control" id="eventReport" name="eventReport"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" name="addEvent">Submit</button>
         </form>
 
     </div>
@@ -94,13 +90,7 @@
     <!-- Include Editor JS files. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.pkgd.min.js"></script>
 
-    <!-- Initialize the editor. -->
-    <script>
-        $('document').ready(function() {
-            $('textarea').froalaEditor() ;
-            $('#eventToDate').datepicker();
-        });
-    </script>
+    <script type="text/javascript" src="js/new_event.js"></script>
 </body>
 
 </html>
