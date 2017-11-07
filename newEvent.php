@@ -90,7 +90,7 @@
     <!-- Include Editor JS files. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.1/js/froala_editor.pkgd.min.js"></script>
 
-    <script type="text/javascript" src="js/new_event.js"></script>
+    <script type="text/javascript" src="js/newEvent.js"></script>
 </body>
 
 </html>
