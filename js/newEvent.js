@@ -12,9 +12,9 @@ function addEvent(event) {
         processData: false,
         dataType: "json",
         success: function(result) {
-            if (result.result == "success") {
+            if (result.status == "success") {
                 console.log(result);
-            } else if (result.result == "failed") {
+            } else if (result.status == "failed") {
                 alert(result.message);
             } else {
                 alert("Failed: Please contact admin.");
