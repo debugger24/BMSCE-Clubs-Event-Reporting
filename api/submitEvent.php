@@ -14,7 +14,7 @@
         $eventReport = mysqli_real_escape_string($con, $eventReport);
 
         // check for duplicates
-        $myquery = "SELECT * FROM events WHERE Title = '$eventTitle'";
+        $myquery = "SELECT * FROM events WHERE Title = '$eventTitle' AND 'FromDate' = '$eventFromDate'";
         $result = mysqli_query($con, $myquery);
         if($result) {
             if(mysqli_num_rows($result) > 0) {
