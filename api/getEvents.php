@@ -28,13 +28,13 @@
         $myquery = "SELECT `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName`, `Report` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy AND e.eventID = $eventID";
 
         $result = mysqli_query($con, $myquery);
-        $response['result'] = ['status' => NULL, 'message' => NULL, 'events' => array()];
+        $response['result'] = ['status' => NULL, 'message' => NULL];
 
         if($result) {
-            if(mysqli_num_rows($result) > 0) {
+            if(mysqli_num_rows($result) == 1) {
                 while($row = mysqli_fetch_assoc($result)) {
                     $response['result']['status'] = 'success';
-                    array_push($response['result']['events'], $row);
+                    $response['result']['event'] = $row;
                 }
                 mysqli_close($con);
                 return $response;
