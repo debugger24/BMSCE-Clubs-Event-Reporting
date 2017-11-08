@@ -43,7 +43,7 @@ $('document').ready(function() {
                     $('<h4 class="card-title">' + event.Title + '</h4>').appendTo(eventCardBody);
                     $('<h6 class="card-subtitle mb-2 text-muted">by ' + event.ClubName + '</h6>').appendTo(eventCardBody);
                     // $('<p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>').appendTo(eventCardBody);
-                    $('<a href="#" class="card-link">Read More</a>').appendTo(eventCardBody);
+                    $('<a href="event.php?event=' + event.EventID + '" class="card-link">Read More</a>').appendTo(eventCardBody);
                     eventCardBody.appendTo(eventCard);
                     return eventCard;
                 });
