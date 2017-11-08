@@ -4,7 +4,7 @@
     function getEventsList() {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
-        $myquery = "SELECT `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy";
+        $myquery = "SELECT `EventID`, `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy";
         $result = mysqli_query($con, $myquery);
         $response['result'] = ['status' => NULL, 'message' => NULL, 'events' => array()];
 
