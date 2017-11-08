@@ -38,7 +38,7 @@ $('document').ready(function() {
             if (result.result.status == "success") {
                 console.log(result);
                 var clubsList = $.map(result.result.clubs, function(club, i) {
-                    var clubCard = $('<div class="card" style="width: 20rem;"></div>');
+                    var clubCard = $('<div class="card col-md-5"></div>');
                     var clubCardBody = $('<div class="card-body"></div>');
                     $('<h4 class="card-title">' + club.ClubName + '</h4>').appendTo(clubCardBody);
                     $('<p class="card-text">' + club.ShortDesc + '</p>').appendTo(clubCardBody);
