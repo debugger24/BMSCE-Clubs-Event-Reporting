@@ -25,7 +25,7 @@
     function getEventDetail($eventID) {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
-        $myquery = "SELECT `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName`, `Report` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy AND e.eventID = $eventID";
+        $myquery = "SELECT `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName`, `Report`, `Added` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy AND e.eventID = $eventID";
 
         $result = mysqli_query($con, $myquery);
         $response['result'] = ['status' => NULL, 'message' => NULL];
