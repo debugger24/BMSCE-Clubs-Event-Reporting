@@ -74,7 +74,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; BMSCE</p>
+            <p class="m-0 text-center text-white">Developed by Rahul Kumar for BMS College of Engineering</p>
         </div>
     </footer>
 
