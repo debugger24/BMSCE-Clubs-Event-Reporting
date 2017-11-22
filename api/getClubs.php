@@ -25,7 +25,7 @@
     function getClubDetails($cludUniqueName) {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
-        $myquery = "SELECT `ClubID`, `ClubUniqueName`, `ClubName`, `EmailID`, `ShortDesc` , `Details` FROM clubs WHERE `ClubUniqueName` = '$cludUniqueName'";
+        $myquery = "SELECT `ClubUniqueName`, `ClubName`, `EmailID`, `ContactNumber`, `Details`, `Website`, `ShortDesc` FROM clubs WHERE `ClubUniqueName` = '$cludUniqueName'";
 
         $result = mysqli_query($con, $myquery);
         $response['result'] = ['status' => NULL, 'message' => NULL];
