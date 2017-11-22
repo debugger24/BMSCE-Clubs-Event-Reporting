@@ -23,11 +23,11 @@ $('document').ready(function() {
             if (result.result.status == "success") {
                 console.log(result);
                 var clubsList = $.map(result.result.clubs, function(club, i) {
-                    var clubCard = $('<div class="card col-md-5"></div>');
+                    var clubCard = $('<div class="card col-md-12" style="margin: 4px"></div>');
                     var clubCardBody = $('<div class="card-body"></div>');
                     $('<h4 class="card-title">' + club.ClubName + '</h4>').appendTo(clubCardBody);
                     $('<p class="card-text">' + club.ShortDesc + '</p>').appendTo(clubCardBody);
-                    $('<a href="#" class="card-link">Explore</a>').appendTo(clubCardBody);
+                    $('<a href="club.php?name=' + club.ClubUniqueName + '" class="card-link">Explore</a>').appendTo(clubCardBody);
                     clubCardBody.appendTo(clubCard);
                     return clubCard;
                 });
