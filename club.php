@@ -56,11 +56,10 @@
                 <h1 class="mt-4" id="clubName">BMSCE IEEE Student Branch</h1>
 
                 <!-- Club Name -->
-                <p class="lead" id="eventWebsite"><a href="#">www.bmsceieee.com</a></p>
+                <p class="lead"><a href="#" id="eventWebsite" target="_blank">www.bmsceieee.com</a></p>
                 <hr>
 
                 <!-- Post Content -->
-                <div id="eventDetails" style="text-align:justify;"></div>
                 <div id="clubDetails" style="text-align:justify;"></div>
                 <hr>
 
