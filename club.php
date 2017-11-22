@@ -61,7 +61,7 @@
 
                 <!-- Post Content -->
                 <div id="eventDetails" style="text-align:justify;"></div>
-                    <p style="text-align: justify;">IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity. IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.</p>
+                <div id="clubDetails" style="text-align:justify;"></div>
                 <hr>
 
             </div>
@@ -72,8 +72,7 @@
                 <div class="card my-4">
                     <h5 class="card-header">Contact</h5>
                     <div class="card-body" id="contactWidget">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>&emsp;<a href="mailto:rahulcomp24@gmail.com">rahulcomp24@gmail.com</a><br>
-                        <i class="fa fa-phone" aria-hidden="true"></i>&emsp;<a href="call:9431908524">9431908524</a>
+
                     </div>
                 </div>
 
