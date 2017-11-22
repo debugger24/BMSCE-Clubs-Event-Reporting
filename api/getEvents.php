@@ -4,14 +4,14 @@
     function getEventsList() {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
-        $myquery = "SELECT `EventID`, `Title`, `Venue`, `FromDate`, `ToDate`, `ClubName` FROM events e, clubs c WHERE C.ClubID = e.ReportedBy";
+        $myquery = "SELECT E.EventID, E.Title, E.Venue, E.FromDate, E.ToDate, E.Report, E.Added, E.LastEdit, E.ReportedBy, GROUP_CONCAT(C.ClubName) AS ClubName FROM events E, clubs C, eventClubAssociation A WHERE E.EventID = A.EventID AND A.ClubID = C.ClubID GROUP BY E.EventID";
         $result = mysqli_query($con, $myquery);
         $response['result'] = ['status' => NULL, 'message' => NULL, 'events' => array()];
 
         if($result) {
             if(mysqli_num_rows($result) > 0) {
+                $response['result']['status'] = 'success';
                 while($row = mysqli_fetch_assoc($result)) {
-                    $response['result']['status'] = 'success';
                     array_push($response['result']['events'], $row);
                 }
                 mysqli_close($con);

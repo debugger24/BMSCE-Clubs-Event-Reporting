@@ -23,7 +23,7 @@ $('document').ready(function() {
             if (result.result.status == "success") {
                 console.log(result);
                 var eventsList = $.map(result.result.events, function(event, i) {
-                    var eventCard = $('<div class="card" style="width: 20rem;"></div>');
+                    var eventCard = $('<div class="card col-md-3" style="width: 20rem;"></div>');
                     var eventCardBody = $('<div class="card-body"></div>');
                     $('<h4 class="card-title">' + event.Title + '</h4>').appendTo(eventCardBody);
                     $('<h6 class="card-subtitle mb-2 text-muted">by ' + event.ClubName + '</h6>').appendTo(eventCardBody);
