@@ -19,6 +19,7 @@ $('document').ready(function() {
                 var eventDetails = $('#eventDetails');
                 var speakers = $('#speakers');
                 var speakersList = $('#speakersList');
+                var eventDetailsSidebarP = $('#eventDetailsSidebar');
 
                 eventTitle.text(result.result.event.Title);
                 eventClub.text(result.result.event.ClubName);
@@ -35,7 +36,32 @@ $('document').ready(function() {
                     });
                 }
 
-                console.log(result.result.event.eventTitle);
+                // Event Details
+                var eventDetailsSidebar = "";
+
+                // Venue
+                eventDetailsSidebar += "<strong>Venue : </strong>" + result.result.event.Venue + "<br>";
+
+                // Event Date
+                var fromDate = new Date(result.result.event.FromDate);
+                var toDate = new Date(result.result.event.ToDate);
+
+                if ((fromDate.getFullYear() == toDate.getFullYear()) && (fromDate.getMonth() == toDate.getMonth()) && (fromDate.getDate() == toDate.getDate())) {
+                    eventDetailsSidebar += "<strong>Date : </strong>" + fromDate.getDate() + " " + getMonthName(fromDate.getMonth()) + " " + fromDate.getFullYear() + "<br>";
+                }
+                else if ((fromDate.getFullYear() == toDate.getFullYear()) && (fromDate.getMonth() == toDate.getMonth())) {
+                    eventDetailsSidebar += "<strong>Date : </strong>" + fromDate.getDate() + " to " + toDate.getDate() + " " + getMonthName(fromDate.getMonth()) + " " + fromDate.getFullYear() + "<br>";
+                }
+                else if ((fromDate.getFullYear() == toDate.getFullYear())) {
+                    eventDetailsSidebar += "<strong>Date : </strong>" + fromDate.getDate() + " " + getMonthName(fromDate.getMonth()) + " to " + toDate.getDate() + " " + getMonthName(toDate.getMonth()) + " " + fromDate.getFullYear() + "<br>";
+                }
+                else {
+                    eventDetailsSidebar += "<strong>Date : </strong>" + fromDate.getDate() + " " + getMonthName(fromDate.getMonth()) + " " + fromDate.getFullYear() + " to " + toDate.getDate() + " " + getMonthName(toDate.getMonth()) + " " + toDate.getFullYear()  + "<br>";
+                }
+
+                // Event Category
+                eventDetailsSidebar += "<strong>Category : </strong>" + result.result.event.Category + "<br>";
+                eventDetailsSidebarP.html(eventDetailsSidebar);
 
             } else if (result.status == "failed") {
                 alert(result.message);
