@@ -81,10 +81,8 @@
                 <div class="card my-4">
                     <h5 class="card-header">Event</h5>
                     <div class="card-body">
-                        <p>
-                            <strong>Venue : </strong> BSN Hall, BMSCE<br>
-                            <strong>Date : </strong> 25 Mar 2017 to 28 Mar 2017<br>
-                            <strong>Category : </strong> Workshop
+                        <p id="eventDetailsSidebar">
+                            
                         </p>
                     </div>
                 </div>
@@ -94,7 +92,7 @@
                     <h5 class="card-header">Speakers</h5>
                     <div class="card-body">
                         <ul id="speakersList">
-                            
+
                         </ul>
                     </div>
                 </div>
