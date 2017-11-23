@@ -1,11 +1,10 @@
-function addEvent(event) {
+var addEvent = function addEvent(event) {
     var form = $("form");
     var formData = new FormData(document.getElementById("eventForm"));
     console.log(formData);
-    event.preventDefault();
     $.ajax({
         type: 'POST',
-        url: form.attr('action'),
+        url: "api/submitEvent.php",
         data: formData,
         contentType: false,
         cache: false,
@@ -31,5 +30,5 @@ $('document').ready(function() {
     $('textarea').froalaEditor();
     // $('#eventToDate').datepicker();
 
-    $("#eventForm").on('submit', addEvent);
+    // $("#eventForm").on('submit', addEvent);
 });
