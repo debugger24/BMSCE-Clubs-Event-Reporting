@@ -30,6 +30,24 @@
                 if($result) {
                     $response['result']['status'] = 'success';
                     $response['result']['message'] = 'Successfully added';
+
+                    // Enter ClubAssociation
+                    $last_id = mysqli_insert_id($con);
+
+                    for($x = 0; $x < count($clubNames); $x++) {
+                        $myquery = "INSERT INTO `eventClubAssociation`(`EventID`, `ClubID`)";
+                        $myquery .= "VALUES ($last_id, (SELECT ClubID FROM `clubs` WHERE ClubUniqueName = '$clubNames[$x]' ))";
+
+                        $result = mysqli_query($con, $myquery);
+                        if($result) {
+                            $response['result']['status'] = 'success';
+                            $response['result']['message'] = 'Successfully added';
+                        }
+                        else {
+                            $response['result']['status'] = 'failed';
+                            $response['result']['message'] = 'Failed to added';
+                        }
+                    }
                 }
                 else {
                     $response['result']['status'] = 'failed';
