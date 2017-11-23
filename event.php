@@ -90,13 +90,11 @@
                 </div>
 
                 <!-- Speakers Widget -->
-                <div class="card my-4">
+                <div class="card my-4" id="speakers">
                     <h5 class="card-header">Speakers</h5>
                     <div class="card-body">
-                        <ul>
-                            <li><strong>Dr Mahesh Sharma</strong><br>Sr Scientict ISRO</li>
-                            <li><strong>Dr KV Pal Singh</strong><br>Co-founder, XYZ Corporation</li>
-                            <li><strong>Mrs Priya Ranjan Singh</strong><br>HoD XYZ Department, ABC College</li>
+                        <ul id="speakersList">
+                            
                         </ul>
                     </div>
                 </div>

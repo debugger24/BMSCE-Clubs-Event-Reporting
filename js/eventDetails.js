@@ -17,11 +17,23 @@ $('document').ready(function() {
                 var eventClub = $('#eventClub');
                 var eventAdded = $('#eventPostDate');
                 var eventDetails = $('#eventDetails');
+                var speakers = $('#speakers');
+                var speakersList = $('#speakersList');
 
                 eventTitle.text(result.result.event.Title);
                 eventClub.text(result.result.event.ClubName);
                 eventAdded.text("Posted on " + result.result.event.Added);
                 eventDetails.html(result.result.event.Report);
+
+                // Speakers
+                if (result.result.event.speakers.length == 0) {
+                    speakers.css("display", "none");
+                }
+                else {
+                    $.each(result.result.event.speakers, function(index, speaker) {
+                        $('<li><strong>' + speaker.SpeakerName + '</strong><br>' + speaker.SpeakerDesignation + '</li>').appendTo(speakersList)
+                    });
+                }
 
                 console.log(result.result.event.eventTitle);
 
