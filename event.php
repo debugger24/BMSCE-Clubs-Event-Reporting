@@ -76,48 +76,31 @@
 
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
-                <!-- Categories Widget -->
+
+                <!-- Event Stats Widget -->
                 <div class="card my-4">
-                    <h5 class="card-header">Clubs</h5>
+                    <h5 class="card-header">Event</h5>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">BMSCE IEEE</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Protocol</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">NSS</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="#">EDC</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Melton</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">XYZ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <p>
+                            <strong>Venue : </strong> BSN Hall, BMSCE<br>
+                            <strong>Date : </strong> 25 Mar 2017 to 28 Mar 2017<br>
+                            <strong>Category : </strong> Workshop
+                        </p>
                     </div>
                 </div>
 
-                <!-- Side Widget -->
+                <!-- Speakers Widget -->
                 <div class="card my-4">
-                    <h5 class="card-header">Side Widget</h5>
+                    <h5 class="card-header">Speakers</h5>
                     <div class="card-body">
-                        We will add something here later.
+                        <ul>
+                            <li><strong>Dr Mahesh Sharma</strong><br>Sr Scientict ISRO</li>
+                            <li><strong>Dr KV Pal Singh</strong><br>Co-founder, XYZ Corporation</li>
+                            <li><strong>Mrs Priya Ranjan Singh</strong><br>HoD XYZ Department, ABC College</li>
+                        </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
