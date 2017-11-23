@@ -5,7 +5,9 @@
         $result['status'] = "true";
         echo json_encode($result);
     }
-    $result = array();
-    $result['status'] = "false";
-    echo json_encode($result);
+    else {
+        $result = array();
+        $result['status'] = "false";
+        echo json_encode($result);
+    }
 ?>
