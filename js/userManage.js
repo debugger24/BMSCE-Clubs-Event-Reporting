@@ -1,6 +1,5 @@
 var login = function login() {
     var errorSpan = $('.loginError');
-    var navBtnLogin = $('#navBtnLogin');
     var navUser = $('#navUser');
     var navUserName = $('#navUserName');
     var loginModal = $('#loginModal');
@@ -12,9 +11,8 @@ var login = function login() {
         success: function(result){
             result = JSON.parse(result);
             if (result.status == "true") {
-                navBtnLogin.css("display", "none");
-                navUser.css("display", "inline");
-                navUserName.html(result.displayname);
+                hideLoginButton();
+                showLoginUser(result.displayname);
                 loginModal.modal('hide');
             }
             else {
@@ -25,9 +23,6 @@ var login = function login() {
 }
 
 var logout = function logout() {
-    var navBtnLogin = $('#navBtnLogin');
-    var navUser = $('#navUser');
-    var navUserName = $('#navUserName');
     var loginModal = $('#loginModal');
 
     $.ajax({
@@ -37,9 +32,8 @@ var logout = function logout() {
         success: function(result){
             result = JSON.parse(result);
             if (result.status == "true") {
-                navBtnLogin.css("display", "block");
-                navUser.css("display", "none");
-                navUserName.html("");
+                showLoginButton();
+                hideLoginUser();
             }
             else {
                 alert("Failed to logout");
