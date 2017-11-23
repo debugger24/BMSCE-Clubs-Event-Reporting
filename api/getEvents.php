@@ -47,6 +47,14 @@
                     }
 
                     // Fetch Speaker Names
+                    $myquerySpeaker = "SELECT SpeakerName, SpeakerDesignation FROM speakers WHERE EventID = $eventID";
+                    $resultSpeaker = mysqli_query($con, $myquerySpeaker);
+                    $response['result']['event']['speakers'] = array();
+                    if(mysqli_num_rows($result) == 1) {
+                        while($rowSpeaker = mysqli_fetch_assoc($resultSpeaker)) {
+                            array_push($response['result']['event']['speakers'], $rowSpeaker);
+                        }
+                    }
                 }
                 mysqli_close($con);
                 return $response;
