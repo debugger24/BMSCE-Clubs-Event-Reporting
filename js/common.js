@@ -12,3 +12,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+var getMonthName = function getMonthName(month) {
+    var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return monthNames[month];
+}
