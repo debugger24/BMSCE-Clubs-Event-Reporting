@@ -54,7 +54,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clubs</a>
                     </li>
-                    <li class="nav-item" id="navBtnLogin">
+                    <li class="nav-item" id="navBtnLogin" style="display:none">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
                     </li>
                     <li class="nav-item dropdown" id="navUser" style="display:none">
