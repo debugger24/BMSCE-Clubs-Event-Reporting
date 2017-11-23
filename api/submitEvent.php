@@ -1,7 +1,7 @@
 <?php
     require_once __DIR__ . '/db_config.php';
 
-    function addEvent($clubID, $eventTitle, $eventVenue, $eventFromDate, $eventToDate, $eventReport) {
+    function addEvent($clubID, $eventTitle, $eventVenue, $eventFromDate, $eventToDate, $categorySelect, $clubNames, $eventReport) {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
         $response['result'] = ['status' => NULL, 'message' => ''];
@@ -12,9 +12,10 @@
         $eventFromDate = mysqli_real_escape_string($con, $eventFromDate);
         $eventToDate = mysqli_real_escape_string($con, $eventToDate);
         $eventReport = mysqli_real_escape_string($con, $eventReport);
+        $categorySelect = mysqli_real_escape_string($con, $categorySelect);
 
         // check for duplicates
-        $myquery = "SELECT * FROM events WHERE Title = '$eventTitle' AND 'FromDate' = '$eventFromDate'";
+        $myquery = "SELECT * FROM events WHERE Title = '$eventTitle' AND FromDate = '$eventFromDate'";
         $result = mysqli_query($con, $myquery);
         if($result) {
             if(mysqli_num_rows($result) > 0) {
@@ -23,9 +24,8 @@
             }
             else {
                 // No Duplicate, Insert New event report
-                $myquery = "INSERT INTO `events`(`Title`, `Venue`, `FromDate`, `ToDate`, `Report`, `ReportedBy`)";
-                $myquery .= "VALUES ('$eventTitle', '$eventVenue', '$eventFromDate', '$eventToDate', '$eventReport', $clubID);";
-
+                $myquery = "INSERT INTO `events`(`Title`, `Venue`, `Category`, `FromDate`, `ToDate`, `Report`)";
+                $myquery .= "VALUES ('$eventTitle', '$eventVenue', '$categorySelect' , '$eventFromDate', '$eventToDate', '$eventReport');";
                 $result = mysqli_query($con, $myquery);
                 if($result) {
                     $response['result']['status'] = 'success';
@@ -46,8 +46,10 @@
        isset($_POST['eventVenue']) &&
        isset($_POST['eventFromDate']) &&
        isset($_POST['eventToDate']) &&
+       isset($_POST['categorySelect']) &&
+       isset($_POST['clubNames']) &&
        isset($_POST['eventReport'])) {
-        echo json_encode(addEvent(1, $_POST['eventTitle'], $_POST['eventVenue'], $_POST['eventFromDate'], $_POST['eventToDate'], utf8_decode($_POST['eventReport'])));
+        echo json_encode(addEvent(1, $_POST['eventTitle'], $_POST['eventVenue'], $_POST['eventFromDate'], $_POST['eventToDate'], $_POST['categorySelect'], $_POST['clubNames'], utf8_decode($_POST['eventReport'])));
     }
     else {
         $response['result']['status'] = "failed";
