@@ -26,6 +26,7 @@
             $_SESSION['type'] = 'admin';
             $_SESSION['userID'] = $row['userID'];
             $_SESSION['emailID'] = $row['Email'];
+            $_SESSION['displayname'] = $row['DisplayName'];
 
             $result = array();
             $result['status'] = "true";
