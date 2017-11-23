@@ -99,30 +99,47 @@
     </nav>
 
     <div class="container" style="margin-top: 80px; margin-bottom: 80px;">
-        <form method="post" name="eventForm" action="api/submitEvent.php" id="eventForm">
-            <div class="form-group">
-                <label for="eventTitle">Event Title</label>
-                <input type="text" class="form-control" id="eventTitle" name="eventTitle" placeholder="Enter event title">
-            </div>
-            <div class="form-group">
-                <label for="eventVenue">Venue</label>
-                <input type="text" class="form-control" id="eventVenue" name="eventVenue" placeholder="Enter event venue">
-            </div>
-            <div class="form-group">
-                <label for="eventFromDate">Date From</label>
-                <input type="text" class="form-control datepicker" id="eventFromDate" name="eventFromDate" >
-            </div>
-            <div class="form-group">
-                <label for="eventToDate">Date To</label>
-                <input type="text" class="form-control datepicker" id="eventToDate" name="eventToDate" >
+        <form name="eventForm" id="eventForm">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" class="form-control" id="eventTitle" name="eventTitle" placeholder="Enter event title">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="eventVenue">Venue</label>
+                    <input type="text" class="form-control" id="eventVenue" name="eventVenue" placeholder="Enter event venue">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="eventFromDate">Date From</label>
+                    <input type="text" class="form-control datepicker" id="eventFromDate" name="eventFromDate" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="eventToDate">Date To</label>
+                    <input type="text" class="form-control datepicker" id="eventToDate" name="eventToDate" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="categorySelect">Category</label>
+                    <select class="form-control" id="categorySelect" name="categorySelect">
+                        <option value="Technical">Technical</option>
+                        <option value="Administrative">Administrative</option>
+                        <option value="Non Technical">Non Technical</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="clubNames">Select one or more club</label>
+                    <select multiple class="form-control" id="clubNames" name="clubNames[]">
+                        <option value="bmsce_ieee">BMSCE IEEE Student Branch</option>
+                        <option value="pentagram">Pentagram</option>
+                        <option value="protocol">Protocol</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 <label for="eventReport">Report</label>
                 <textarea class="form-control" id="eventReport" name="eventReport"></textarea>
             </div>
-
-            <button type="submit" class="btn btn-primary" name="addEvent">Submit</button>
         </form>
+        <button class="btn btn-primary" onclick="addEvent();">Submit</button>
 
     </div>
 
