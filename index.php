@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -198,6 +202,18 @@
     <script src="js/event.js"></script>
     <script src="js/clubs.js"></script>
     <script src="js/userManage.js"></script>
+    <script>
+        <?php
+            if($_SESSION['displayname']) {
+                echo "showLoginUser('" . $_SESSION['displayname'] . "');";
+                echo "hideLoginButton();";
+            }
+            else {
+                echo "hideLoginUser();";
+                echo "showLoginButton();";
+            }
+        ?>
+    </script>
 </body>
 
 </html>
