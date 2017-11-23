@@ -12,7 +12,7 @@ var addEvent = function addEvent(event) {
         dataType: "json",
         success: function(result) {
             if (result.status == "success") {
-                console.log(result);
+                alert("Successfully Added");
             } else if (result.status == "failed") {
                 alert(result.message);
             } else {
