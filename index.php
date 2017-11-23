@@ -58,9 +58,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clubs</a>
                     </li>
+
+                    <!-- Initially hide both Login and Display Name -->
+
+                    <!-- Login -->
                     <li class="nav-item" id="navBtnLogin" style="display:none">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
                     </li>
+
+                    <!-- Display Name with Logout Button -->
                     <li class="nav-item dropdown" id="navUser" style="display:none">
                         <a class="nav-link dropdown-toggle" href="#" id="navUserName" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Rahul Kumar
@@ -69,6 +75,7 @@
                             <a class="dropdown-item" href="#" onclick="logout();">Logout</a>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -204,10 +211,14 @@
     <script src="js/userManage.js"></script>
     <script>
         <?php
+
+            // If user is already logged
             if($_SESSION['displayname']) {
                 echo "showLoginUser('" . $_SESSION['displayname'] . "');";
                 echo "hideLoginButton();";
             }
+
+            // If user is not logged in
             else {
                 echo "hideLoginUser();";
                 echo "showLoginButton();";
