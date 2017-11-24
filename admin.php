@@ -58,15 +58,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clubs</a>
                     </li>
-                    <li class="nav-item active">
+                    <!-- Initially Display Name -->
+
+                    <!-- Manage -->
+                    <li class="nav-item active" id="navBtnManage" style="display:none">
                         <a class="nav-link" href="admin.php">Manage</a>
                     </li>
-
-                    <!-- Initially hide both Login and Display Name -->
 
                     <!-- Login -->
                     <li class="nav-item" id="navBtnLogin" style="display:none">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+                    </li>
+
+                    <!-- Register -->
+                    <li class="nav-item" id="navBtnRegister" style="display:none">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
                     </li>
 
                     <!-- Display Name with Logout Button -->
@@ -132,6 +138,13 @@
             if($_SESSION['displayname']) {
                 echo "showLoginUser('" . $_SESSION['displayname'] . "');";
                 echo "hideLoginRegisterButton();";
+
+                if ($_SESSION['userType'] == "ClubAdmin") {
+                    echo "showManageButton();";
+                }
+                else {
+                    echo "hideManageButton();";
+                }
             }
 
             // If user is not logged in
