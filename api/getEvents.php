@@ -64,8 +64,32 @@
         return NULL;
     }
 
+    function getEventListByClub($clubName) {
+        $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
+
+        $myquery = "SELECT E.EventID, E.Title, E.FromDate FROM clubs C, eventClubAssociation A, events E WHERE C.ClubUniqueName = '$clubName' AND A.ClubID = C.ClubID AND E.EventID = A.EventID";
+        $result = mysqli_query($con, $myquery);
+        $response['result'] = ['status' => NULL, 'message' => NULL, 'events' => array()];
+
+        if($result) {
+            if(mysqli_num_rows($result) > 0) {
+                $response['result']['status'] = 'success';
+                while($row = mysqli_fetch_assoc($result)) {
+                    array_push($response['result']['events'], $row);
+                }
+                mysqli_close($con);
+                return $response;
+            }
+        }
+        mysqli_close($con);
+        return NULL;
+    }
+
     if ($_GET['eventID']) {
         echo json_encode(getEventDetail($_GET['eventID']));
+    }
+    else if ($_GET['clubName']) {
+        echo json_encode(getEventListByClub($_GET['clubName']));
     }
     else {
         echo json_encode(getEventsList());
