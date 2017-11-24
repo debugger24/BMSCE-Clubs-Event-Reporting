@@ -18,7 +18,7 @@ var getMonthName = function getMonthName(month) {
     return monthNames[month];
 }
 
-var showLoginRegisterButton = function showLoginRegisterButton() {
+var hideLoginRegisterButton = function hideLoginRegisterButton() {
     var navBtnLogin = $('#navBtnLogin');
     var navBtnRegister = $('#navBtnRegister');
 
@@ -32,6 +32,16 @@ var showLoginRegisterButton = function showLoginRegisterButton() {
 
     navBtnLogin.css("display", "block");
     navBtnRegister.css("display", "block");
+}
+
+var showManageButton = function showManageButton() {
+    var navBtnManage = $('#navBtnManage');
+    navBtnManage.css("display", "block");
+}
+
+var hideManageButton = function hideManageButton() {
+    var navBtnManage = $('#navBtnManage');
+    navBtnManage.css("display", "none");
 }
 
 var hideLoginUser = function hideLoginUser()  {

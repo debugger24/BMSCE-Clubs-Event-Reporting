@@ -58,11 +58,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Clubs</a>
                     </li>
-                    <li class="nav-item">
+
+                    <!-- Initially Display Name -->
+
+                    <!-- Manage -->
+                    <li class="nav-item" id="navBtnManage" style="display:none">
                         <a class="nav-link" href="admin.php">Manage</a>
                     </li>
-
-                    <!-- Initially hide both Login and Display Name -->
 
                     <!-- Login -->
                     <li class="nav-item" id="navBtnLogin" style="display:none">
@@ -223,13 +225,20 @@
             // If user is already logged
             if($_SESSION['displayname']) {
                 echo "showLoginUser('" . $_SESSION['displayname'] . "');";
-                echo "hideLoginButton();";
+                echo "hideLoginRegisterButton();";
+
+                if ($_SESSION['userType'] == "ClubAdmin") {
+                    echo "showManageButton();";
+                }
+                else {
+                    echo "hideManageButton();";
+                }
             }
 
             // If user is not logged in
             else {
                 echo "hideLoginUser();";
-                echo "showLoginButton();";
+                echo "showLoginRegisterButton();";
             }
         ?>
     </script>

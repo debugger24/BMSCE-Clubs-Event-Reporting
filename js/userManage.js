@@ -11,9 +11,13 @@ var login = function login() {
         success: function(result){
             result = JSON.parse(result);
             if (result.status == "true") {
-                hideLoginButton();
+                hideLoginRegisterButton();
                 showLoginUser(result.displayname);
                 loginModal.modal('hide');
+
+                // if (result.userType == "ClubAdmin") {
+                //     showManageButton();
+                // }
             }
             else {
                 errorSpan.css("display", "inline");
@@ -32,8 +36,9 @@ var logout = function logout() {
         success: function(result){
             result = JSON.parse(result);
             if (result.status == "true") {
-                showLoginButton();
+                showLoginRegisterButton();
                 hideLoginUser();
+                hideManageButton();
             }
             else {
                 alert("Failed to logout");

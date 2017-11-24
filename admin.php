@@ -131,13 +131,13 @@
             // If user is already logged
             if($_SESSION['displayname']) {
                 echo "showLoginUser('" . $_SESSION['displayname'] . "');";
-                echo "hideLoginButton();";
+                echo "hideLoginRegisterButton();";
             }
 
             // If user is not logged in
             else {
                 echo "hideLoginUser();";
-                echo "showLoginButton();";
+                echo "showLoginRegisterButton();";
             }
         ?>
 
