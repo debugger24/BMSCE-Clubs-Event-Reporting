@@ -30,6 +30,7 @@
             $result = array();
             $result['status'] = "true";
             $result['displayname'] = $row['DisplayName'];
+            $result['type'] = $row['Type'];
             return $result;
         }
         $result = array();
