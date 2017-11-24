@@ -5,8 +5,6 @@
     function login($username, $password) {
         $con = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_DATABASE) or die(mysql_error());
 
-
-
         $ip = $_SERVER['SERVER_ADDR'];
 
         $username = strtolower(trim($username));
@@ -19,7 +17,7 @@
         // $hash_and_salt = $hashFormat . $salt;
         // $password = crypt($password, $hash_and_salt);
 
-        $myquery = "SELECT userID, Email, DisplayName FROM `user` WHERE (`Email`='$username' AND `Password` ='$password')";
+        $myquery = "SELECT userID, Email, DisplayName, Type FROM `user` WHERE (`Email`='$username' AND `Password` ='$password')";
         $result = mysqli_query($con, $myquery);
         if(mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
@@ -27,6 +25,7 @@
             $_SESSION['userID'] = $row['userID'];
             $_SESSION['emailID'] = $row['Email'];
             $_SESSION['displayname'] = $row['DisplayName'];
+            $_SESSION['userType'] = $row['Type'];
 
             $result = array();
             $result['status'] = "true";
