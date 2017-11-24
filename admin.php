@@ -101,7 +101,8 @@
                         <th scope="col">Edit</th>
                     </tr>
                 </thead>
-                <tbody id="eventList">
+                <tbody id="eventListByClubName">
+                    
                 </tbody>
             </table>
         </div>
@@ -122,6 +123,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="js/common.js"></script>
     <script src="js/clubs.js"></script>
+    <script src="js/admin.js"></script>
     <script src="js/userManage.js"></script>
     <script>
         <?php
@@ -138,6 +140,10 @@
                 echo "showLoginButton();";
             }
         ?>
+
+        $('document').ready(function() {
+            loadEventListByClubName();
+        });
     </script>
 </body>
 
