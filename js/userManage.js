@@ -15,9 +15,9 @@ var login = function login() {
                 showLoginUser(result.displayname);
                 loginModal.modal('hide');
 
-                // if (result.userType == "ClubAdmin") {
-                //     showManageButton();
-                // }
+                if (result.type == "ClubAdmin") {
+                    showManageButton();
+                }
             }
             else {
                 errorSpan.css("display", "inline");
