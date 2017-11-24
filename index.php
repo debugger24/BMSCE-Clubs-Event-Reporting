@@ -69,6 +69,11 @@
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
                     </li>
 
+                    <!-- Register -->
+                    <li class="nav-item" id="navBtnRegister" style="display:none">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a>
+                    </li>
+
                     <!-- Display Name with Logout Button -->
                     <li class="nav-item dropdown" id="navUser" style="display:none">
                         <a class="nav-link dropdown-toggle" href="#" id="navUserName" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
