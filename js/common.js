@@ -18,14 +18,20 @@ var getMonthName = function getMonthName(month) {
     return monthNames[month];
 }
 
-var hideLoginButton = function hideLoginButton() {
+var showLoginRegisterButton = function showLoginRegisterButton() {
     var navBtnLogin = $('#navBtnLogin');
+    var navBtnRegister = $('#navBtnRegister');
+
     navBtnLogin.css("display", "none");
+    navBtnRegister.css("display", "none");
 }
 
-var showLoginButton = function showLoginButton() {
+var showLoginRegisterButton = function showLoginRegisterButton() {
     var navBtnLogin = $('#navBtnLogin');
+    var navBtnRegister = $('#navBtnRegister');
+
     navBtnLogin.css("display", "block");
+    navBtnRegister.css("display", "block");
 }
 
 var hideLoginUser = function hideLoginUser()  {
